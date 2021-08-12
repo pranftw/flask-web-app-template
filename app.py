@@ -15,6 +15,10 @@ cors = CORS(app, resources={r"/static/*": {"origins": ALLOWED}})
 def home():
     return render_template('main.html')
 
+@app.context_processor
+def context_processor():
+    return dict()
+
 
 if __name__=='__main__':
     app.jinja_env.cache = {}

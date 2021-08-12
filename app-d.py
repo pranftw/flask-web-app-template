@@ -21,6 +21,10 @@ def objs_to_dict(objs):
         objs_list.append(obj_dict)
     return objs_list
 
+@app.context_processor
+def context_processor():
+    return dict()
+
 
 @app.get("/")
 @app.get("/home")
