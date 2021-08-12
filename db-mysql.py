@@ -13,8 +13,4 @@ metadata.reflect()
 Base = automap_base(metadata=metadata)
 Base.prepare(engine)
 
-Post = Base.classes.post
-Project = Base.classes.project
-Series = Base.classes.series
-
 Session = sqlalchemy.orm.sessionmaker(engine)
