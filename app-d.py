@@ -1,5 +1,6 @@
 from flask import Flask, url_for, render_template, redirect
 from flask_cors import CORS
+from flask import session as flask_session
 from config import HOST, PORT, DEBUG, SERVER_NAME, ALLOWED, SECRET_KEY
 from db import Session
 
@@ -22,4 +23,5 @@ def objs_to_dict(objs):
 
 
 if __name__=='__main__':
-    app.run(host=HOST, port=PORT, debug=DEBUG)
+    app.jinja_env.cache = {}
+    app.run(host=HOST, port=PORT, debug=DEBUG, threaded=True)
